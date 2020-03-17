@@ -1,4 +1,5 @@
 import requests
+
 API_KEY = open("api_key.txt").read()
 
 with open("list.csv") as f:
@@ -6,7 +7,7 @@ with open("list.csv") as f:
         line_split = line.split(",")
         address = line_split[0]
         name = line_split[1]
-        full_address = f"{address}, barcelona"
+        full_address = f"{address}, gracia, barcelona"
 
         response = requests.get(f"https://maps.googleapis.com/maps/api/geocode/json?address={full_address}&key={API_KEY}")
 
